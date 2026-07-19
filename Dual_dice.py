@@ -1,16 +1,12 @@
 import random
 
-playing = True
-while playing:
-    choice = input("Roll the dice (y/n) : ".lower())
-    if choice == "y":
-        die_one = random.randint(1,6)
-        die_two = random.randint(1,6)
-        print (f"({die_one},{die_two})")
-    elif choice == "n":
-         playing = False
-         print("Thanks for playing!")
-         break
-    else:
-        print("Please enter a valid choice")
+def roll_dice():
+    return random.randint(1,6)
 
+while True:
+    input("Press Enter to roll the dice ")
+    print (f"You rolled a {roll_dice()}")
+    play_again = input("Would you like to play again? (y/n) : ").lower()
+    if play_again != "y":
+        print ("Thank you for playing")
+        break
